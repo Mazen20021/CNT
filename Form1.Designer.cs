@@ -31,10 +31,10 @@ namespace CINT
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CNT));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -955,10 +955,10 @@ namespace CINT
             this.PagesTab.Controls.Add(this.W_R);
             this.PagesTab.Controls.Add(this.OSC);
             this.PagesTab.Controls.Add(this.tabPage2);
-            this.PagesTab.Location = new System.Drawing.Point(196, -6);
+            this.PagesTab.Location = new System.Drawing.Point(196, -23);
             this.PagesTab.Name = "PagesTab";
             this.PagesTab.SelectedIndex = 0;
-            this.PagesTab.Size = new System.Drawing.Size(581, 555);
+            this.PagesTab.Size = new System.Drawing.Size(581, 572);
             this.PagesTab.TabIndex = 0;
             // 
             // tabPage1
@@ -1406,7 +1406,7 @@ namespace CINT
             this.W_R.Location = new System.Drawing.Point(4, 22);
             this.W_R.Name = "W_R";
             this.W_R.Padding = new System.Windows.Forms.Padding(3);
-            this.W_R.Size = new System.Drawing.Size(573, 529);
+            this.W_R.Size = new System.Drawing.Size(573, 546);
             this.W_R.TabIndex = 7;
             this.W_R.Text = "RAM/ROM";
             // 
@@ -1733,30 +1733,30 @@ namespace CINT
             // chart1
             // 
             this.chart1.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
-            chartArea8.AxisX.MaximumAutoSize = 100F;
-            chartArea8.AxisX2.MaximumAutoSize = 100F;
-            chartArea8.AxisY.MaximumAutoSize = 100F;
-            chartArea8.AxisY2.MaximumAutoSize = 100F;
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.MaximumAutoSize = 100F;
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea9.AxisX.MaximumAutoSize = 100F;
+            chartArea9.AxisX2.MaximumAutoSize = 100F;
+            chartArea9.AxisY.MaximumAutoSize = 100F;
+            chartArea9.AxisY2.MaximumAutoSize = 100F;
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.MaximumAutoSize = 100F;
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(-2, 123);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series8.Legend = "Legend1";
-            series8.Name = "SerialRead";
-            this.chart1.Series.Add(series8);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.Legend = "Legend1";
+            series9.Name = "SerialRead";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(581, 353);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title8.Name = "Osceloscope";
-            title8.Text = "Oscilloscope";
-            this.chart1.Titles.Add(title8);
+            title9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title9.Name = "Osceloscope";
+            title9.Text = "Oscilloscope";
+            this.chart1.Titles.Add(title9);
             // 
             // button9
             // 
