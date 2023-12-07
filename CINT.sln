@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CINT", "CINT.csproj", "{13FB4261-F0FB-4DE9-BE99-172141510B6A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CNTSetup", "..\CNTSetup\CNTSetup.vdproj", "{064F7304-07CD-4828-9468-A902A440696B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Debug|x86.Build.0 = Debug|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Release|x86.ActiveCfg = Release|Any CPU
+		{13FB4261-F0FB-4DE9-BE99-172141510B6A}.Release|x86.Build.0 = Release|Any CPU
+		{064F7304-07CD-4828-9468-A902A440696B}.Debug|Any CPU.ActiveCfg = Debug
+		{064F7304-07CD-4828-9468-A902A440696B}.Debug|x86.ActiveCfg = Debug
+		{064F7304-07CD-4828-9468-A902A440696B}.Release|Any CPU.ActiveCfg = Release
+		{064F7304-07CD-4828-9468-A902A440696B}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F21935E-7F90-41C2-9343-A343D622BA32}
+	EndGlobalSection
+EndGlobal
