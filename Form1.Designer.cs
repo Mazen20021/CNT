@@ -31,10 +31,10 @@ namespace CINT
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CNT));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -344,7 +344,7 @@ namespace CINT
             this.AVOBot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AVOBot.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AVOBot.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.AVOBot.Location = new System.Drawing.Point(-14, 318);
+            this.AVOBot.Location = new System.Drawing.Point(-14, 359);
             this.AVOBot.Name = "AVOBot";
             this.AVOBot.Size = new System.Drawing.Size(227, 42);
             this.AVOBot.TabIndex = 2;
@@ -414,22 +414,22 @@ namespace CINT
             // 
             // button8
             // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.No;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Enabled = false;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(-14, 359);
+            this.button8.Location = new System.Drawing.Point(-14, 318);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(227, 42);
             this.button8.TabIndex = 15;
-            this.button8.Text = "Graph (Soon)";
+            this.button8.Text = "Graph";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // AboutPage
             // 
-            this.AboutPage.BackColor = System.Drawing.Color.Teal;
+            this.AboutPage.BackColor = System.Drawing.Color.SlateGray;
             this.AboutPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.AboutPage.Controls.Add(this.label25);
             this.AboutPage.Controls.Add(this.label24);
@@ -472,7 +472,7 @@ namespace CINT
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(-30, 241);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(655, 16);
+            this.label24.Size = new System.Drawing.Size(656, 16);
             this.label24.TabIndex = 14;
             this.label24.Text = "................................................................................." +
     "................................................................................" +
@@ -484,7 +484,7 @@ namespace CINT
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(-14, 204);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(655, 16);
+            this.label23.Size = new System.Drawing.Size(656, 16);
             this.label23.TabIndex = 13;
             this.label23.Text = "................................................................................." +
     "................................................................................" +
@@ -963,7 +963,7 @@ namespace CINT
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Teal;
+            this.tabPage1.BackColor = System.Drawing.Color.SlateGray;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.pictureBox3);
@@ -982,9 +982,10 @@ namespace CINT
             // label31
             // 
             this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(3, 179);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(362, 25);
+            this.label31.Size = new System.Drawing.Size(321, 24);
             this.label31.TabIndex = 6;
             this.label31.Text = "And Connect it to MC or Terminal";
             // 
@@ -1002,18 +1003,20 @@ namespace CINT
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(3, 140);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(596, 25);
+            this.label30.Size = new System.Drawing.Size(529, 24);
             this.label30.TabIndex = 4;
             this.label30.Text = "Step 3: You need to get CompPIM from the components";
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.Location = new System.Drawing.Point(4, 106);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(414, 25);
+            this.linkLabel2.Size = new System.Drawing.Size(369, 24);
             this.linkLabel2.TabIndex = 3;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "https://www.labcenter.com/downloads/";
@@ -1022,27 +1025,30 @@ namespace CINT
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(4, 75);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(411, 25);
+            this.label29.Size = new System.Drawing.Size(358, 24);
             this.label29.TabIndex = 2;
             this.label29.Text = "Step 2: Get Protues Circuit Simulation";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(4, 12);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(378, 25);
+            this.label27.Size = new System.Drawing.Size(330, 24);
             this.label27.TabIndex = 1;
             this.label27.Text = "Step 1: Get A Virtual Port Emulator";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.Location = new System.Drawing.Point(3, 41);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(444, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(392, 24);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://eterlogic.com/Products.VSPE.html";
@@ -1050,7 +1056,7 @@ namespace CINT
             // 
             // SensorPage
             // 
-            this.SensorPage.BackColor = System.Drawing.Color.Teal;
+            this.SensorPage.BackColor = System.Drawing.Color.SlateGray;
             this.SensorPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SensorPage.Controls.Add(this.label28);
             this.SensorPage.Controls.Add(this.MC_Txt);
@@ -1411,7 +1417,7 @@ namespace CINT
             this.ErrorDetection.Location = new System.Drawing.Point(119, 236);
             this.ErrorDetection.Name = "ErrorDetection";
             this.ErrorDetection.ReadOnly = true;
-            this.ErrorDetection.Size = new System.Drawing.Size(450, 75);
+            this.ErrorDetection.Size = new System.Drawing.Size(448, 75);
             this.ErrorDetection.TabIndex = 23;
             this.ErrorDetection.Text = "";
             // 
@@ -1427,7 +1433,7 @@ namespace CINT
             // Writing_text
             // 
             this.Writing_text.AutoSize = true;
-            this.Writing_text.Location = new System.Drawing.Point(428, 96);
+            this.Writing_text.Location = new System.Drawing.Point(422, 96);
             this.Writing_text.Name = "Writing_text";
             this.Writing_text.Size = new System.Drawing.Size(136, 24);
             this.Writing_text.TabIndex = 21;
@@ -1436,7 +1442,7 @@ namespace CINT
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(439, 72);
+            this.label43.Location = new System.Drawing.Point(425, 72);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(109, 24);
             this.label43.TabIndex = 20;
@@ -1455,7 +1461,7 @@ namespace CINT
             // PortNo
             // 
             this.PortNo.AutoSize = true;
-            this.PortNo.Location = new System.Drawing.Point(428, 48);
+            this.PortNo.Location = new System.Drawing.Point(423, 44);
             this.PortNo.Name = "PortNo";
             this.PortNo.Size = new System.Drawing.Size(136, 24);
             this.PortNo.TabIndex = 18;
@@ -1464,7 +1470,7 @@ namespace CINT
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(428, 14);
+            this.label44.Location = new System.Drawing.Point(421, 12);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(147, 24);
             this.label44.TabIndex = 17;
@@ -1482,7 +1488,7 @@ namespace CINT
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(277, 72);
+            this.label42.Location = new System.Drawing.Point(262, 72);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(105, 24);
             this.label42.TabIndex = 15;
@@ -1506,7 +1512,7 @@ namespace CINT
             // ChosenMode
             // 
             this.ChosenMode.AutoSize = true;
-            this.ChosenMode.Location = new System.Drawing.Point(261, 45);
+            this.ChosenMode.Location = new System.Drawing.Point(262, 44);
             this.ChosenMode.Name = "ChosenMode";
             this.ChosenMode.Size = new System.Drawing.Size(136, 24);
             this.ChosenMode.TabIndex = 13;
@@ -1515,7 +1521,7 @@ namespace CINT
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(261, 11);
+            this.label40.Location = new System.Drawing.Point(260, 11);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(141, 24);
             this.label40.TabIndex = 12;
@@ -1523,7 +1529,7 @@ namespace CINT
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(475, 340);
+            this.Delete.Location = new System.Drawing.Point(473, 340);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(94, 36);
             this.Delete.TabIndex = 11;
@@ -1535,7 +1541,7 @@ namespace CINT
             // 
             this.Readbot.Location = new System.Drawing.Point(473, 378);
             this.Readbot.Name = "Readbot";
-            this.Readbot.Size = new System.Drawing.Size(94, 37);
+            this.Readbot.Size = new System.Drawing.Size(94, 33);
             this.Readbot.TabIndex = 10;
             this.Readbot.Text = "Read";
             this.Readbot.UseVisualStyleBackColor = true;
@@ -1596,7 +1602,7 @@ namespace CINT
             // 
             this.Data_write.Location = new System.Drawing.Point(293, 149);
             this.Data_write.Name = "Data_write";
-            this.Data_write.Size = new System.Drawing.Size(276, 29);
+            this.Data_write.Size = new System.Drawing.Size(274, 29);
             this.Data_write.TabIndex = 1;
             this.Data_write.Text = "Write Data";
             // 
@@ -1715,8 +1721,10 @@ namespace CINT
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(-2, 482);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(205, 37);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
@@ -1725,30 +1733,30 @@ namespace CINT
             // chart1
             // 
             this.chart1.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
-            chartArea1.AxisX.MaximumAutoSize = 100F;
-            chartArea1.AxisX2.MaximumAutoSize = 100F;
-            chartArea1.AxisY.MaximumAutoSize = 100F;
-            chartArea1.AxisY2.MaximumAutoSize = 100F;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.MaximumAutoSize = 100F;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea8.AxisX.MaximumAutoSize = 100F;
+            chartArea8.AxisX2.MaximumAutoSize = 100F;
+            chartArea8.AxisY.MaximumAutoSize = 100F;
+            chartArea8.AxisY2.MaximumAutoSize = 100F;
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.MaximumAutoSize = 100F;
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(-2, 123);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "SerialRead";
-            this.chart1.Series.Add(series1);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series8.Legend = "Legend1";
+            series8.Name = "SerialRead";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(581, 353);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Osceloscope";
-            title1.Text = "Oscilloscope";
-            this.chart1.Titles.Add(title1);
+            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title8.Name = "Osceloscope";
+            title8.Text = "Oscilloscope";
+            this.chart1.Titles.Add(title8);
             // 
             // button9
             // 

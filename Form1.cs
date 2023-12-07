@@ -84,6 +84,7 @@ namespace CINT
                 button3.Enabled = true;
                 WRBot.Enabled = true;
                 TC.Enabled = true;
+                button8.Enabled = true;
             }
             else
             {
@@ -92,6 +93,7 @@ namespace CINT
                 button3.Enabled = false;
                 WRBot.Enabled = false;
                 TC.Enabled = false;
+                button8.Enabled = false;
             }
         }
         private void check_BR(object sender, EventArgs e)
@@ -524,7 +526,8 @@ namespace CINT
             ChosenMode.Text = Cmode.SelectedItem.ToString();
             if (Cmode.SelectedItem.ToString().Equals("PORT Write"))
             {
-                Writing_text.Text = "PORT ";
+                Writing_text.Text = "PIN ";
+                comboBox2.DataSource = new string[] { "Select A PIN" };
             }
             else if (Cmode.SelectedItem.ToString().Equals("ROM Write"))
             {
@@ -781,7 +784,15 @@ namespace CINT
                     MessageBox.Show("This Feature is not yet installed check new updates only choose atmega32", "Soon Feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case "ATMega32":
-                    comboBox2.DataSource = new string[] { "Select A PORT", "PORTA", "PORTB", "PORTC", "PORTD" };
+                    if(Cmode.SelectedItem.ToString().Equals("PORT Write"))
+                    {
+                        comboBox2.DataSource = new string[] { "Select A PIN", "PINA", "PINB", "PINC", "PIND" };
+                    }
+                    else
+                    {
+                        comboBox2.DataSource = new string[] { "Select A PORT", "PORTA", "PORTB", "PORTC", "PORTD" };
+                    }
+                    
                     break;
                 case "ATMega128 (Soon)":
                     MessageBox.Show("This Feature is not yet installed check new updates only choose atmega32", "Soon Feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
