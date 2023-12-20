@@ -31,10 +31,25 @@ namespace CINT
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CNT));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -84,6 +99,7 @@ namespace CINT
             this.Current = new System.Windows.Forms.PictureBox();
             this.Volts = new System.Windows.Forms.PictureBox();
             this.ConnectionPage = new System.Windows.Forms.TabPage();
+            this.ssbut = new System.Windows.Forms.CheckBox();
             this.Parity = new System.Windows.Forms.ComboBox();
             this.DBits = new System.Windows.Forms.ComboBox();
             this.SBits = new System.Windows.Forms.ComboBox();
@@ -160,16 +176,26 @@ namespace CINT
             this.Data_write = new System.Windows.Forms.TextBox();
             this.Cmode = new System.Windows.Forms.ComboBox();
             this.OSC = new System.Windows.Forms.TabPage();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.amplitudetext = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.typesignal = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.freqtext = new System.Windows.Forms.Label();
+            this.aafa = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.Freq = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.Waves = new System.Windows.Forms.ComboBox();
             this.Amp = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button9 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Datasent = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -180,6 +206,20 @@ namespace CINT
             this.RData = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.Datasend = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -207,6 +247,11 @@ namespace CINT
             this.OSC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -756,6 +801,7 @@ namespace CINT
             // 
             this.ConnectionPage.BackColor = System.Drawing.Color.SlateGray;
             this.ConnectionPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ConnectionPage.Controls.Add(this.ssbut);
             this.ConnectionPage.Controls.Add(this.Parity);
             this.ConnectionPage.Controls.Add(this.DBits);
             this.ConnectionPage.Controls.Add(this.SBits);
@@ -779,6 +825,16 @@ namespace CINT
             this.ConnectionPage.TabIndex = 0;
             this.ConnectionPage.Text = "Connection";
             // 
+            // ssbut
+            // 
+            this.ssbut.AutoSize = true;
+            this.ssbut.Location = new System.Drawing.Point(11, 135);
+            this.ssbut.Name = "ssbut";
+            this.ssbut.Size = new System.Drawing.Size(136, 29);
+            this.ssbut.TabIndex = 16;
+            this.ssbut.Text = "Start/Stop";
+            this.ssbut.UseVisualStyleBackColor = true;
+            // 
             // Parity
             // 
             this.Parity.FormattingEnabled = true;
@@ -787,9 +843,9 @@ namespace CINT
             "NONE",
             "EVEN",
             "ODD"});
-            this.Parity.Location = new System.Drawing.Point(8, 45);
+            this.Parity.Location = new System.Drawing.Point(8, 86);
             this.Parity.Name = "Parity";
-            this.Parity.Size = new System.Drawing.Size(154, 33);
+            this.Parity.Size = new System.Drawing.Size(254, 33);
             this.Parity.TabIndex = 15;
             this.Parity.Text = "Parity";
             // 
@@ -800,9 +856,9 @@ namespace CINT
             "DataBits",
             "7",
             "8"});
-            this.DBits.Location = new System.Drawing.Point(8, 84);
+            this.DBits.Location = new System.Drawing.Point(268, 45);
             this.DBits.Name = "DBits";
-            this.DBits.Size = new System.Drawing.Size(154, 33);
+            this.DBits.Size = new System.Drawing.Size(288, 33);
             this.DBits.TabIndex = 14;
             this.DBits.Text = "DataBits";
             // 
@@ -813,9 +869,9 @@ namespace CINT
             "StopsBits",
             "1",
             "2"});
-            this.SBits.Location = new System.Drawing.Point(168, 84);
+            this.SBits.Location = new System.Drawing.Point(268, 86);
             this.SBits.Name = "SBits";
-            this.SBits.Size = new System.Drawing.Size(147, 33);
+            this.SBits.Size = new System.Drawing.Size(288, 33);
             this.SBits.TabIndex = 13;
             this.SBits.Text = "StopsBits";
             // 
@@ -833,15 +889,15 @@ namespace CINT
             "19200",
             "38400",
             "57600"});
-            this.BRate.Location = new System.Drawing.Point(168, 45);
+            this.BRate.Location = new System.Drawing.Point(8, 45);
             this.BRate.Name = "BRate";
-            this.BRate.Size = new System.Drawing.Size(147, 33);
+            this.BRate.Size = new System.Drawing.Size(254, 33);
             this.BRate.TabIndex = 12;
             this.BRate.Text = "BaudRate";
             // 
             // Refresh
             // 
-            this.Refresh.Location = new System.Drawing.Point(378, 74);
+            this.Refresh.Location = new System.Drawing.Point(334, 152);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(123, 43);
             this.Refresh.TabIndex = 11;
@@ -916,7 +972,7 @@ namespace CINT
             // 
             // ConnectionBot
             // 
-            this.ConnectionBot.Location = new System.Drawing.Point(378, 6);
+            this.ConnectionBot.Location = new System.Drawing.Point(180, 152);
             this.ConnectionBot.Name = "ConnectionBot";
             this.ConnectionBot.Size = new System.Drawing.Size(123, 43);
             this.ConnectionBot.TabIndex = 2;
@@ -939,7 +995,7 @@ namespace CINT
             this.PortNames.FormattingEnabled = true;
             this.PortNames.Location = new System.Drawing.Point(8, 6);
             this.PortNames.Name = "PortNames";
-            this.PortNames.Size = new System.Drawing.Size(307, 33);
+            this.PortNames.Size = new System.Drawing.Size(548, 33);
             this.PortNames.TabIndex = 0;
             this.PortNames.Text = "COM1";
             this.PortNames.SelectedIndexChanged += new System.EventHandler(this.PortNames_SelectedIndexChanged);
@@ -955,10 +1011,12 @@ namespace CINT
             this.PagesTab.Controls.Add(this.W_R);
             this.PagesTab.Controls.Add(this.OSC);
             this.PagesTab.Controls.Add(this.tabPage2);
-            this.PagesTab.Location = new System.Drawing.Point(196, -23);
+            this.PagesTab.Controls.Add(this.tabPage3);
+            this.PagesTab.Controls.Add(this.tabPage4);
+            this.PagesTab.Location = new System.Drawing.Point(196, -6);
             this.PagesTab.Name = "PagesTab";
             this.PagesTab.SelectedIndex = 0;
-            this.PagesTab.Size = new System.Drawing.Size(581, 572);
+            this.PagesTab.Size = new System.Drawing.Size(581, 555);
             this.PagesTab.TabIndex = 0;
             // 
             // tabPage1
@@ -1406,7 +1464,7 @@ namespace CINT
             this.W_R.Location = new System.Drawing.Point(4, 22);
             this.W_R.Name = "W_R";
             this.W_R.Padding = new System.Windows.Forms.Padding(3);
-            this.W_R.Size = new System.Drawing.Size(573, 546);
+            this.W_R.Size = new System.Drawing.Size(573, 529);
             this.W_R.TabIndex = 7;
             this.W_R.Text = "RAM/ROM";
             // 
@@ -1625,16 +1683,26 @@ namespace CINT
             // 
             this.OSC.BackColor = System.Drawing.Color.SlateGray;
             this.OSC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.OSC.Controls.Add(this.button16);
-            this.OSC.Controls.Add(this.button15);
-            this.OSC.Controls.Add(this.button14);
+            this.OSC.Controls.Add(this.button25);
+            this.OSC.Controls.Add(this.button24);
+            this.OSC.Controls.Add(this.button18);
+            this.OSC.Controls.Add(this.label47);
+            this.OSC.Controls.Add(this.label49);
+            this.OSC.Controls.Add(this.amplitudetext);
+            this.OSC.Controls.Add(this.label46);
+            this.OSC.Controls.Add(this.button21);
+            this.OSC.Controls.Add(this.typesignal);
+            this.OSC.Controls.Add(this.label48);
+            this.OSC.Controls.Add(this.freqtext);
+            this.OSC.Controls.Add(this.aafa);
+            this.OSC.Controls.Add(this.label41);
+            this.OSC.Controls.Add(this.button19);
+            this.OSC.Controls.Add(this.button17);
             this.OSC.Controls.Add(this.Freq);
             this.OSC.Controls.Add(this.button11);
             this.OSC.Controls.Add(this.Waves);
             this.OSC.Controls.Add(this.Amp);
-            this.OSC.Controls.Add(this.richTextBox1);
             this.OSC.Controls.Add(this.chart1);
-            this.OSC.Controls.Add(this.button9);
             this.OSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OSC.Location = new System.Drawing.Point(4, 22);
             this.OSC.Name = "OSC";
@@ -1643,39 +1711,155 @@ namespace CINT
             this.OSC.TabIndex = 8;
             this.OSC.Text = "tabPage2";
             // 
-            // button16
+            // button25
             // 
-            this.button16.Enabled = false;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(285, 482);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(102, 37);
-            this.button16.TabIndex = 11;
-            this.button16.Text = "Continue";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button25.Location = new System.Drawing.Point(293, 488);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(133, 36);
+            this.button25.TabIndex = 29;
+            this.button25.Text = "Custom";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
-            // button15
+            // button24
             // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(482, 483);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(83, 37);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "Reset";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Location = new System.Drawing.Point(435, 488);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(133, 36);
+            this.button24.TabIndex = 28;
+            this.button24.Text = "Logic ";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
-            // button14
+            // button18
             // 
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(393, 483);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(83, 37);
-            this.button14.TabIndex = 9;
-            this.button14.Text = "Pause";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button18.Enabled = false;
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(137, 488);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(133, 36);
+            this.button18.TabIndex = 27;
+            this.button18.Text = "Stop";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(500, 86);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(21, 24);
+            this.label47.TabIndex = 26;
+            this.label47.Text = "0";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(492, 55);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(53, 24);
+            this.label49.TabIndex = 25;
+            this.label49.Text = "Amp";
+            // 
+            // amplitudetext
+            // 
+            this.amplitudetext.Location = new System.Drawing.Point(445, 257);
+            this.amplitudetext.Name = "amplitudetext";
+            this.amplitudetext.Size = new System.Drawing.Size(100, 29);
+            this.amplitudetext.TabIndex = 24;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(441, 230);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(104, 24);
+            this.label46.TabIndex = 23;
+            this.label46.Text = "Amplitude";
+            // 
+            // button21
+            // 
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(-2, 488);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(133, 36);
+            this.button21.TabIndex = 22;
+            this.button21.Text = "Show";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // typesignal
+            // 
+            this.typesignal.AutoSize = true;
+            this.typesignal.Location = new System.Drawing.Point(201, 86);
+            this.typesignal.Name = "typesignal";
+            this.typesignal.Size = new System.Drawing.Size(154, 24);
+            this.typesignal.TabIndex = 21;
+            this.typesignal.Text = "........................";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(205, 55);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(141, 24);
+            this.label48.TabIndex = 20;
+            this.label48.Text = "Type of signal";
+            // 
+            // freqtext
+            // 
+            this.freqtext.AutoSize = true;
+            this.freqtext.Location = new System.Drawing.Point(405, 86);
+            this.freqtext.Name = "freqtext";
+            this.freqtext.Size = new System.Drawing.Size(21, 24);
+            this.freqtext.TabIndex = 19;
+            this.freqtext.Text = "5";
+            // 
+            // aafa
+            // 
+            this.aafa.AutoSize = true;
+            this.aafa.Location = new System.Drawing.Point(358, 55);
+            this.aafa.Name = "aafa";
+            this.aafa.Size = new System.Drawing.Size(118, 24);
+            this.aafa.TabIndex = 18;
+            this.aafa.Text = "Freq. (HTz)";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.White;
+            this.label41.Location = new System.Drawing.Point(441, 332);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(111, 24);
+            this.label41.TabIndex = 16;
+            this.label41.Text = "Frequency";
+            // 
+            // button19
+            // 
+            this.button19.BackgroundImage = global::CINT.Properties.Resources.down_png;
+            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(435, 359);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(53, 37);
+            this.button19.TabIndex = 14;
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackgroundImage = global::CINT.Properties.Resources.up_png;
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(504, 359);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(53, 37);
+            this.button17.TabIndex = 12;
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // Freq
             // 
@@ -1689,9 +1873,9 @@ namespace CINT
             // 
             this.button11.Enabled = false;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(202, 62);
+            this.button11.Location = new System.Drawing.Point(6, 62);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(133, 55);
+            this.button11.Size = new System.Drawing.Size(144, 55);
             this.button11.TabIndex = 7;
             this.button11.Text = "Generate";
             this.button11.UseVisualStyleBackColor = true;
@@ -1719,55 +1903,34 @@ namespace CINT
             this.Amp.TabIndex = 5;
             this.Amp.Text = "Amplitude";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(-2, 482);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(205, 37);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // chart1
             // 
             this.chart1.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
-            chartArea9.AxisX.MaximumAutoSize = 100F;
-            chartArea9.AxisX2.MaximumAutoSize = 100F;
-            chartArea9.AxisY.MaximumAutoSize = 100F;
-            chartArea9.AxisY2.MaximumAutoSize = 100F;
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
-            legend9.MaximumAutoSize = 100F;
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            chartArea1.AxisX.MaximumAutoSize = 100F;
+            chartArea1.AxisX2.MaximumAutoSize = 100F;
+            chartArea1.AxisY.MaximumAutoSize = 100F;
+            chartArea1.AxisY2.MaximumAutoSize = 100F;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.MaximumAutoSize = 100F;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-2, 123);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series9.Legend = "Legend1";
-            series9.Name = "SerialRead";
-            this.chart1.Series.Add(series9);
-            this.chart1.Size = new System.Drawing.Size(581, 353);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "SerialRead";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(581, 367);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title9.Name = "Osceloscope";
-            title9.Text = "Oscilloscope";
-            this.chart1.Titles.Add(title9);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(209, 482);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 37);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Draw";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Osceloscope";
+            title1.Text = "Oscilloscope";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // tabPage2
             // 
@@ -1871,12 +2034,235 @@ namespace CINT
             this.Datasend.TabIndex = 0;
             this.Datasend.Text = "Data";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.SlateGray;
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage3.Controls.Add(this.chart2);
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Controls.Add(this.button14);
+            this.tabPage3.Controls.Add(this.richTextBox1);
+            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(573, 529);
+            this.tabPage3.TabIndex = 10;
+            this.tabPage3.Text = "tabPage3";
+            // 
+            // chart2
+            // 
+            this.chart2.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
+            chartArea2.AxisX.MaximumAutoSize = 100F;
+            chartArea2.AxisX2.MaximumAutoSize = 100F;
+            chartArea2.AxisY.MaximumAutoSize = 100F;
+            chartArea2.AxisY2.MaximumAutoSize = 100F;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.MaximumAutoSize = 100F;
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(-2, 0);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "SerialRead";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(581, 475);
+            this.chart2.TabIndex = 17;
+            this.chart2.Text = "chart2";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Osceloscope";
+            title2.Text = "Oscilloscope";
+            this.chart2.Titles.Add(title2);
+            // 
+            // button16
+            // 
+            this.button16.Enabled = false;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(286, 481);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(102, 37);
+            this.button16.TabIndex = 16;
+            this.button16.Text = "Continue";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click_1);
+            // 
+            // button15
+            // 
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(483, 482);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(83, 37);
+            this.button15.TabIndex = 15;
+            this.button15.Text = "Reset";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(394, 482);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(83, 37);
+            this.button14.TabIndex = 14;
+            this.button14.Text = "Pause";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click_1);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(1, 481);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(203, 37);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(210, 481);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(70, 37);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "Draw";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.SlateGray;
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage4.Controls.Add(this.richTextBox2);
+            this.tabPage4.Controls.Add(this.button23);
+            this.tabPage4.Controls.Add(this.button22);
+            this.tabPage4.Controls.Add(this.button20);
+            this.tabPage4.Controls.Add(this.chart3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(573, 529);
+            this.tabPage4.TabIndex = 11;
+            this.tabPage4.Text = "tabPage4";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(418, 400);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(138, 101);
+            this.richTextBox2.TabIndex = 22;
+            this.richTextBox2.Text = "Debug";
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(418, 357);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(138, 37);
+            this.button23.TabIndex = 21;
+            this.button23.Text = "Clear";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(418, 296);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(138, 37);
+            this.button22.TabIndex = 20;
+            this.button22.Text = "Pause";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button20
+            // 
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Location = new System.Drawing.Point(418, 236);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(138, 37);
+            this.button20.TabIndex = 19;
+            this.button20.Text = "Draw";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // chart3
+            // 
+            this.chart3.BackColor = System.Drawing.Color.DarkGray;
+            this.chart3.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            chartArea3.AxisX.MaximumAutoSize = 100F;
+            chartArea3.AxisX2.MaximumAutoSize = 100F;
+            chartArea3.AxisY.MaximumAutoSize = 100F;
+            chartArea3.AxisY2.MaximumAutoSize = 100F;
+            chartArea3.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea3);
+            legend3.MaximumAutoSize = 100F;
+            legend3.Name = "Legend1";
+            this.chart3.Legends.Add(legend3);
+            this.chart3.Location = new System.Drawing.Point(-6, -2);
+            this.chart3.Name = "chart3";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.Name = "Channel 0";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series4.Legend = "Legend1";
+            series4.Name = "Channel 1";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series5.Legend = "Legend1";
+            series5.Name = "Channel 2";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series6.Legend = "Legend1";
+            series6.Name = "Channel 3";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series7.Legend = "Legend1";
+            series7.Name = "Channel 4";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series8.Legend = "Legend1";
+            series8.Name = "Channel 5";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series9.Legend = "Legend1";
+            series9.Name = "Channel 6";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series10.Legend = "Legend1";
+            series10.Name = "Channel 7";
+            this.chart3.Series.Add(series3);
+            this.chart3.Series.Add(series4);
+            this.chart3.Series.Add(series5);
+            this.chart3.Series.Add(series6);
+            this.chart3.Series.Add(series7);
+            this.chart3.Series.Add(series8);
+            this.chart3.Series.Add(series9);
+            this.chart3.Series.Add(series10);
+            this.chart3.Size = new System.Drawing.Size(581, 533);
+            this.chart3.TabIndex = 18;
+            this.chart3.Text = "chart3";
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Osceloscope";
+            title3.Text = "Oscilloscope";
+            this.chart3.Titles.Add(title3);
+            // 
             // CNT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(773, 543);
+            this.ClientSize = new System.Drawing.Size(770, 543);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PagesTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1923,6 +2309,11 @@ namespace CINT
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2039,7 +2430,6 @@ namespace CINT
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TabPage OSC;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button TC;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TabPage tabPage2;
@@ -2065,15 +2455,41 @@ namespace CINT
         private System.Windows.Forms.ComboBox Addresses;
         private System.Windows.Forms.RichTextBox ErrorDetection;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox Waves;
         private System.Windows.Forms.TextBox Amp;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TextBox Freq;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label freqtext;
+        private System.Windows.Forms.Label aafa;
+        private System.Windows.Forms.Label typesignal;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox amplitudetext;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.CheckBox ssbut;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 

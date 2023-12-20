@@ -8,21 +8,38 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Linq;
 using System.Data;
+using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Timers;
 namespace CINT
 {
     public partial class CNT : Form
     {
+        private System.Windows.Forms.Timer updateTimer = new System.Windows.Forms.Timer();
+        private const int GraphWidth = 800;
+        private const int GraphHeight = 800;
+        private System.Windows.Forms.Timer timer1;
+        System.Windows.Forms.Timer ctimer = new System.Windows.Forms.Timer();
+        private int xOffset;
         bool isConnected;
         int elapsedSeconds;
         int counter = 0;
+        string sdata;
+        bool isactive = false;
+        bool isset = false;
         bool start_code = false;
         bool is_clicked = false;
-        double getvalues;
+        int frequ = 5;
+        int k = 0;
         bool is_on = false;
+        string data;
         string Dx_read = "";
+        string Dx_read2 = "";
         string Port_name = "";
         string datas_read = "";
         bool checked_data;
+        private delegate double WaveformFunction(double time);
+        System.Windows.Forms.Timer signalTimer = new System.Windows.Forms.Timer();
         System.Windows.Forms.Timer gtime = new System.Windows.Forms.Timer();
         SerialPort sp;
         kayChart sd;
@@ -60,6 +77,168 @@ namespace CINT
             Addresses.Enabled = false;
             Data_write.Enabled = false;
             Delete.Enabled = false;
+            freqtext.Text = "10";
+        }
+        private void Timer_Tick1(object sender, EventArgs e)
+        {
+            // Increment the x offset to move the wave horizontally
+            xOffset++;
+            // Update the chart
+            if(isset)
+            {
+                UpdateChart();
+            }
+        }
+        private void InitializeChart()
+        {
+            ChartArea chartArea = new ChartArea();
+            chartArea.BackColor = Color.White;
+
+            Series series = new Series();
+            series.ChartType = SeriesChartType.Line;
+            series.Color = Color.Blue;
+
+            Chart chart = new Chart();
+            chart.Width = GraphWidth;
+            chart.Height = GraphHeight;
+            chart.ChartAreas.Add(chartArea);
+            chart.Series.Add(series);
+
+            Controls.Add(chart);
+        }
+        private void UpdateChart()
+        {
+            string signal = sdata;
+            if(amplitudetext.Text == "")
+            {
+                amplitudetext.Text = "0";
+            }
+            if(frequ < 100)
+            {
+                frequ = 100;
+            }
+            int amp = int.Parse(amplitudetext.Text);
+            switch (signal)
+            {
+                case "a":
+                    try
+                    {
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            double y = amp * Math.Sin(2 * Math.PI * x / (frequ*10) + xOffset * 0.1);
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                //cos
+                case "b":
+                    try
+                    {
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            double y = amp * Math.Cos(2 * Math.PI * x / (frequ*10) + xOffset * 0.1);
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                //tan
+                case "c":
+                    try
+                    {
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            double y = amp * Math.Tan(2 * Math.PI * x / (frequ * 10) + xOffset * 0.1);
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                //square
+                case "d":
+                    
+                    try
+                    {
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        int wavePeriod = GraphWidth / (frequ); // Calculate the wave period based on the desired frequency
+
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            int currentWavePosition = x % wavePeriod; // Calculate the position within the wave cycle
+
+                            // Determine the value of y based on the current wave position
+                            double y = currentWavePosition < wavePeriod / 2 ? amp : -amp;
+
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                //triangle
+                case "e":
+                    try
+                    {
+                        // double dataPoint = amp + amp * (2 * Math.Abs(2 * (time * freq - Math.Floor(time * freq + 0.5))) - 1);
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            double y = amp *(2 * Math.Abs(xOffset * frequ - Math.Floor(xOffset * frequ + 0.5)));
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                //sawtooth
+                case "f":
+                    try
+                    {
+                        //  double dataPoint = amp + amp * (2 * time * freq - Math.Floor(time * freq + 0.5));
+                        Chart chart = Controls.Find("chart1", true)[0] as Chart;
+                        chart.Series[0].Points.Clear();
+                        for (int x = 0; x < GraphWidth; x++)
+                        {
+                            double y = amp *(2*xOffset*frequ -  Math.Floor(xOffset * frequ + 0.5));
+                            chart.Series[0].Points.AddXY(x, y);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+            }
+           
+        }
+        private void InitializeTimer()
+        {
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 50; // Update the graph every 50 milliseconds
+            timer1.Tick += Timer_Tick1;
+            timer1.Start();
         }
         private void setProg_Timer()
         {
@@ -129,9 +308,19 @@ namespace CINT
             }
             else
             {
+                
                 ConnectionBot.Enabled = false;
                 sp = new SerialPort(PortNames.SelectedItem.ToString());
-                sp.DataReceived += new SerialDataReceivedEventHandler(data_ex_handler);
+                if(ssbut.Checked)
+                {
+                    MessageBox.Show("Data with (!) as a start of data and ($) as end of it", "info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    sp.DataReceived += new SerialDataReceivedEventHandler(data_ex_handler);
+                }
+                else
+                {
+                    MessageBox.Show("No (!) as a start of data and ($) as end of it", "info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    sp.DataReceived += new SerialDataReceivedEventHandler(data_ex2_handler);
+                }
                 try
                 {
                     sp.Open();
@@ -528,10 +717,18 @@ namespace CINT
             {
                 Writing_text.Text = "PIN ";
                 comboBox2.DataSource = new string[] { "Select A PIN" };
+                
             }
             else if (Cmode.SelectedItem.ToString().Equals("ROM Write"))
             {
                 Writing_text.Text = "ROM";
+                List<string> addresses = new List<string>();
+
+                for (int i = 0; i < 1024; i++)
+                {
+                    addresses.Add("0x00" + i);
+                }
+                Addresses.DataSource = addresses.ToArray();
                 Addresses.Enabled = false;
                 Address_select.Enabled = false;
             }
@@ -565,7 +762,6 @@ namespace CINT
                 Writebot.Enabled = false;
                 Addresses.Enabled = false;
                 Data_write.Enabled = false;
-
             }
             else
             {
@@ -600,9 +796,13 @@ namespace CINT
             }
             else
             {
+                if (!Address_select.Items.Contains(Addresses.SelectedItem.ToString()))
+                {
+                    Address_select.Items.Add(Addresses.SelectedItem.ToString());
+                }
                 try
                 {
-                    sp.WriteLine("*W" + "@" + Data_write.Text + "!");
+                    sp.WriteLine("*W" +"$"+Addresses.SelectedItem.ToString()+ "@" + Data_write.Text + "!");
                     ErrorDetection.Text = "Data Sent To ROM Successfully";
 
                 }
@@ -622,7 +822,7 @@ namespace CINT
             }
             if (Cmode.SelectedItem.ToString().Contains("ROM"))
             {
-                sp.WriteLine("*R");
+                sp.WriteLine("*R$"+Address_select.SelectedItem.ToString());
                 Dx_read = Dx_read.Replace(Address_select.SelectedItem.ToString(), "")
                      .Replace("R", "")
                      .Replace("W", "");
@@ -672,76 +872,78 @@ namespace CINT
         }
         private void set_timer_graph()
         {
-            
             gtime.Interval += 1000;
-            gtime.Tick += setgraph;
+            gtime.Tick += setsquare;
+            //gtime.Tick += setgraph;
+            //gtime.Tick += sharp;
             gtime.Start();
         }
-        private int[] GetDigits(int number)
+        private List<int> GetDigits(string number)
         {
-            if(number == 0)
-            {
-                number = 1;
-            }
-            // Determine the number of digits
-            int numDigits = (int)Math.Floor(Math.Log10(number) + 1);
+            List<int> digits = new List<int>();
 
-            // Create an array to store the digits
-            int[] digits = new int[numDigits];
-
-            // Extract and store each digit
-            for (int i = numDigits - 1; i >= 0; i--)
+            foreach (char digitChar in number.Reverse())
             {
-                digits[i] = number % 10;
-                number /= 10;
+                if (char.IsDigit(digitChar))
+                {
+                    digits.Add(int.Parse(digitChar.ToString()));
+                }
             }
 
             return digits;
         }
-        private void setgraph(object sender, EventArgs e)
+        private void setsquare(object sender, EventArgs e)
         {
-            int[] digits = null;
-
-            if (Dx_read.Contains("!") || Dx_read.Contains("$") || Dx_read.Equals(""))
+            if (Dx_read.Contains("!") || Dx_read.Contains("$"))
             {
-                Dx_read += Dx_read.Replace("!", "");
-                Dx_read += Dx_read.Replace("$", "");
-                Dx_read = "1";
+                Dx_read = Dx_read.Replace("!", "").Replace("$", "");
             }
-            
-                digits = GetDigits(int.Parse(Dx_read));
-            
             try
+            {
+                List<int> digits = GetDigits(Dx_read);
+
+                chart2.Series["SerialRead"].Points.Clear(); // Clear existing data in the chart
+
+                for (int i = digits.Count - 1; i >= 0; i--)
                 {
-                    foreach (int value in digits)
+                    int y = digits[i]; // Y-axis value
+                                       // Plot individual points instead of a continuous line
+                    chart2.Series["SerialRead"].Points.AddXY(k, y);
+                    // Add a dot to represent each digit
+                    DataPoint dot = chart2.Series["SerialRead"].Points.Last();
+                    dot.MarkerStyle = MarkerStyle.Circle;
+                    dot.MarkerSize = 10; // Adjust the size of the marker as needed
+                    k++;
+                    if (k == digits.Count)
                     {
-                        double convertedValue = (int)value;
-                        chart1.Series["SerialRead"].Points.AddXY(DateTime.Now.ToLongTimeString(), convertedValue);
+                        gtime.Stop();
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid input. Please enter a valid integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                updateTimer.Stop();
+                gtime.Stop();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                updateTimer.Stop();
+                gtime.Stop();
+            }
         }
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void InitializeTimergraph1()
         {
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            // Set up the timer interval and event handler
+            updateTimer.Interval = 1000; // Adjust the interval as needed
+            updateTimer.Tick += setsquare;
+            updateTimer.Start();
         }
         private void CNT_Load(object sender, EventArgs e)
         {
             sd = new kayChart(chart1, 60);
             sd.serieName = "SerialRead";
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += Dx_read;
-            set_timer_graph();
-            button16.Enabled = false;
-            button14.Enabled = true;
-            button9.Enabled = false;
         }
         private void button12_Click(object sender, EventArgs e)
         {
@@ -852,10 +1054,10 @@ namespace CINT
             switch(waves_name)
             {
                 case "Sine":
-                    sp.WriteLine("$0"+ "@" +Amp.Text+ "#" +"F"+ Freq.Text+"#");
+                    sp.WriteLine("$1"+ "@" +Amp.Text+ "#" +"F"+ Freq.Text+"#");
                     break;
                 case "Square":
-                    sp.WriteLine("$1" + "@" + Amp.Text + "#" + "F" + Freq.Text + "#");
+                    sp.WriteLine("$2" + "@" + Amp.Text + "#" + "F" + Freq.Text + "#");
                     break;
                 case "SawTooth":
                     sp.WriteLine("$2" + "@" + Amp.Text + "#" + "F" + Freq.Text + "#");
@@ -865,30 +1067,336 @@ namespace CINT
                     break;
             }
         }
-        private void button14_Click(object sender, EventArgs e)
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button17_Click(object sender, EventArgs e)
+        {
+            frequ += 5;
+            freqtext.Text = frequ.ToString();
+        }
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if(frequ == 0)
+            {
+                frequ = 5;
+                freqtext.Text = frequ.ToString();
+                MessageBox.Show("You have reached the limit of frequency", "Limited Reached", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                button19.Enabled = false;
+            }
+            else
+            {
+                button19.Enabled = true;
+                frequ -= 5;
+                freqtext.Text = frequ.ToString();
+            }
+        }
+        private void getgraph()
+        {
+            string data = Dx_read;
+            if (Dx_read.Contains("!") || Dx_read.Contains("$") || Dx_read.Equals(""))
+            {
+                Dx_read += Dx_read.Replace("!", "");
+                Dx_read += Dx_read.Replace("$", "");
+                Dx_read = "1";
+            }
+            switch (data)
+            {
+                //sine
+                case "a":
+                    sdata = "a";
+                    UpdateChart();
+                    break;
+                //cos
+                case "b":
+                    sdata = "b";
+                    UpdateChart();
+                    break;
+                //tan
+                case "c":
+                    sdata = "c";
+                    UpdateChart();
+                    break;
+                //square
+                case "d":
+                    sdata = "d";
+                    UpdateChart();
+                    break;
+                //triangle
+                case "e":
+                    sdata = "e";
+                    UpdateChart();
+                    break;
+                //sawtooth
+                case "f":
+                    sdata = "f";
+                    UpdateChart();
+                    break;
+            }
+        }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            InitializeTimer();
+            InitializeChart();
+            getgraph();
+            isset = true;
+            button21.Enabled = false;
+            button18.Enabled = true;
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            button21.Enabled = true;
+            button18.Enabled = false;
+            isset = false;
+            InitializeChart();
+        }
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Dx_read;
+            InitializeTimergraph1();
+            set_timer_graph();
+            button16.Enabled = false;
+            button14.Enabled = true;
+            button9.Enabled = false;
+        }
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            gtime.Start();
+            updateTimer.Start();
+            button9.Enabled = false;
+            button16.Enabled = false;
+            button14.Enabled = true;
+        }
+        private void button14_Click_1(object sender, EventArgs e)
         {
             gtime.Stop();
+            updateTimer.Stop();
             button16.Enabled = true;
             button9.Enabled = false;
             button14.Enabled = false;
         }
-
-        private void button15_Click(object sender, EventArgs e)
+        private void button15_Click_1(object sender, EventArgs e)
         {
+            k = 0;
             gtime.Stop();
+            updateTimer.Stop();
+            chart2.Series["SerialRead"].Points.Clear();
             Dx_read = "";
             chart1.ResetText();
             button16.Enabled = false;
             button14.Enabled = false;
             button9.Enabled = true;
         }
-
-        private void button16_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            gtime.Start();
-            button9.Enabled = false;
-            button16.Enabled = false;
-            button14.Enabled = true;
+            richTextBox1.SelectionStart = richTextBox1.Text.Length;
+            richTextBox1.ScrollToCaret();
         }
+        private void set_channel_timer()
+        {
+            isactive = true;
+            
+            ctimer.Interval = 2500;
+            ctimer.Tick += button20_Click;
+            ctimer.Start();
+        }
+        private void data_ex2_handler(object sender, SerialDataReceivedEventArgs e)
+        {
+            sp = (SerialPort)sender;
+            String Recived_Data = sp.ReadExisting();
+            Dx_read2 += Recived_Data;
+        }
+        private void button20_Click(object sender, EventArgs e)
+        {
+            button20.Enabled = false;
+            button22.Enabled = true;
+            button23.Enabled = false;
+            string data_got = Dx_read2;
+            string tmp2 = "";
+            data = "";
+            if (!isactive)
+            {
+                set_channel_timer();
+            }
+            ctimer.Start();
+            if(data_got.Contains("!") || data_got.Contains("$"))
+            {
+                data_got += data_got.Replace("!","");
+                data_got += data_got.Replace("$", "");
+            }
+            chart3.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart3.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            chart3.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chart3.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+            try
+                {
+                    for (int i = data_got.Length - 2; i > data_got.Length - 10; i--)
+                    {
+                        tmp2 += data_got[i];
+                    }
+                    for (int i = tmp2.Length - 1; i >= 0; i--)
+                    {
+                        data += tmp2[i];
+                    }
+                    if (data[0] == '0')
+                    {
+                    chart3.Series["Channel 0"].Points.AddY("1");
+                    }
+                    else
+                    {
+                    chart3.Series["Channel 0"].Points.AddY("2");
+                    }
+                    if (data[1] == '0')
+                    chart3.Series["Channel 1"].Points.AddY("3");
+                    else
+                    chart3.Series["Channel 1"].Points.AddY("4");
+
+                    if (data[2] == '0')
+                    chart3.Series["Channel 2"].Points.AddY("5");
+                    else
+                    chart3.Series["Channel 2"].Points.AddY("6");
+
+                    if (data[3] == '0')
+                    chart3.Series["Channel 3"].Points.AddY("7");
+                    else
+                    chart3.Series["Channel 3"].Points.AddY("8");
+
+                    if (data[4] == '0')
+                    chart3.Series["Channel 4"].Points.AddY("9");
+                    else
+                    chart3.Series["Channel 4"].Points.AddY("10");
+
+                    if (data[5] == '0')
+                    chart3.Series["Channel 5"].Points.AddY("11");
+                    else
+                    chart3.Series["Channel 5"].Points.AddY("12");
+
+                    if (data[6] == '0')
+                    chart3.Series["Channel 6"].Points.AddY("13");
+                    else
+                    chart3.Series["Channel 6"].Points.AddY("14");
+
+                    if (data[7] == '0')
+                    chart3.Series["Channel 7"].Points.AddY("15");
+                    else
+                    chart3.Series["Channel 7"].Points.AddY("16");
+                    richTextBox2.Text = ("Every Thing is Okay");
+            }
+            catch (Exception ex)
+                {
+                    richTextBox2.Text = ("Error couldn't draw Data dueto: " + ex);
+                }
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            PagesTab.SelectedTab = tabPage4;
+        }
+        private void button25_Click(object sender, EventArgs e)
+        {
+            PagesTab.SelectedTab = tabPage3;
+        }
+        private void button22_Click(object sender, EventArgs e)
+        {
+            button20.Enabled = true;
+            button22.Enabled = false;
+            button23.Enabled = true;
+            ctimer.Stop();
+
+        }
+        private void button23_Click(object sender, EventArgs e)
+        {
+            button20.Enabled = true;
+            button22.Enabled = false;
+            button23.Enabled = true;
+            ctimer.Stop();
+            chart3.ResetAutoValues();
+        }
+        /*
+       private void sharp(object sender, EventArgs e)
+       {
+           if (Dx_read.Contains("!") || Dx_read.Contains("$"))
+           {
+               Dx_read = Dx_read.Replace("!", "").Replace("$", "");
+           }
+
+           try
+           {
+               if (int.TryParse(Dx_read, out int number))
+               {
+                   long[] digits = GetDigits(number);
+
+                   chart2.Series["SerialRead"].Points.Clear(); // Clear existing data in the chart
+
+                   double x = 0; // Starting X-coordinate for all points
+
+                   foreach (int digit in digits)
+                   {
+                       double y = digit; // Y-coordinate is the digit value
+
+                       // Plot individual points to form vertical lines
+                       chart2.Series["SerialRead"].Points.AddXY(x, y);
+                       chart2.Series["SerialRead"].Points.AddXY(x + 0.5, y); // Move horizontally to form a 90-degree angle
+                       chart2.Series["SerialRead"].Points.AddXY(x + 0.5, double.NaN); // Create a gap for a vertical line
+                       chart2.Series["SerialRead"].Points.AddXY(x + 1, double.NaN); // Create a gap for a vertical line
+
+                       // Add a square marker to represent each digit
+                       DataPoint dot = chart2.Series["SerialRead"].Points.Last();
+                       dot.MarkerStyle = MarkerStyle.Square;
+                       dot.MarkerSize = 10; // Adjust the size of the marker as needed
+
+                       x += 1; // Increment the X-coordinate for the next digit
+                   }
+               }
+               else
+               {
+                   MessageBox.Show("Invalid input. Please enter a valid integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               }
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           }
+       }
+       */
+        /*
+        private void setgraph(object sender, EventArgs e)
+        {
+            if (Dx_read.Contains("!") || Dx_read.Contains("$"))
+            {
+                Dx_read = Dx_read.Replace("!", "").Replace("$", "");
+            }
+
+            try
+            {
+                if (int.TryParse(Dx_read, out int number))
+                {
+                    long[] digits = GetDigits(number);
+
+                    chart2.Series["SerialRead"].Points.Clear(); // Clear existing data in the chart
+
+                    for (int i = digits.Length - 1; i >= 0; i--)
+                    {
+                        chart2.Series["SerialRead"].Points.Add(digits[i]);
+                        k++;
+                        if(k == digits.Length)
+                        {
+                            gtime.Stop();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input. Please enter a valid integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gtime.Stop();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                gtime.Stop();
+            }
+        }
+        */
     }
 }
