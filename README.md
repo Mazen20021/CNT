@@ -9,7 +9,7 @@
 
 ## System Requirements
 - Windows 7 or Higher
-- Memory 1GB
+- Memory 1GB Maximum
 - .netframework 3.8 or Higher
   
 ## Required Programs
